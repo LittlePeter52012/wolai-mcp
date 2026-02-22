@@ -33,7 +33,7 @@ pip install wolai-mcp
 Or install from source:
 
 ```bash
-git clone https://github.com/SlavaTang/wolai-mcp.git
+git clone https://github.com/LittlePeter52012/wolai-mcp.git
 cd wolai-mcp
 pip install -e .
 ```

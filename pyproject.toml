@@ -19,8 +19,8 @@ classifiers = [
 dependencies = ["mcp[cli]>=1.0.0", "requests>=2.28.0"]
 
 [project.urls]
-Homepage = "https://github.com/SlavaTang/wolai-mcp"
-Issues = "https://github.com/SlavaTang/wolai-mcp/issues"
+Homepage = "https://github.com/LittlePeter52012/wolai-mcp"
+Issues = "https://github.com/LittlePeter52012/wolai-mcp/issues"
 
 [project.scripts]
 wolai-mcp = "wolai_mcp.server:main"
