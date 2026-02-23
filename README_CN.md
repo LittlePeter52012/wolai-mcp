@@ -210,11 +210,11 @@ pip install wolai-mcp
 
 ### 💎 加密货币 (USDC / ERC-20)
 
-```
-0xD42c7c40785Fc00C707B859C541d42037611843b
-```
+<a href="https://littlepeter52012.github.io/wolai-mcp/donate.html">
+  <img src="https://img.shields.io/badge/USDC%2FETH-立即捐赠-6c5ce7?style=for-the-badge&logo=ethereum&logoColor=white" alt="加密货币捐赠">
+</a>
 
-<sub>支持 USDC、USDT、ETH — Ethereum 及 L2 网络均可</sub>
+<sub>点击捐赠 — 支持 MetaMask、SafePal 等钱包</sub>
 
 </td>
 </tr>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support LittlePeter52012 — Crypto Donation</title>
+  <meta name="description" content="Support open-source MCP tools development with crypto donations (USDC, USDT, ETH)">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      min-height: 100vh;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 20% 50%, rgba(120, 80, 220, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(60, 180, 255, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 50% 80%, rgba(255, 120, 200, 0.06) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(1deg); }
+      66% { transform: translate(-20px, 20px) rotate(-1deg); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(20, 20, 40, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                  0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 32px; }
+
+    .avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .header a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .header a:hover { color: #a5b4fc; }
+
+    /* Network selector */
+    .network-section { margin-bottom: 24px; }
+
+    .network-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .networks {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .network-btn {
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: #9ca3af;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .network-btn:hover {
+      border-color: rgba(124, 58, 237, 0.4);
+      background: rgba(124, 58, 237, 0.1);
+      color: #c4b5fd;
+    }
+
+    .network-btn.active {
+      border-color: #7c3aed;
+      background: rgba(124, 58, 237, 0.2);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+    }
+
+    /* Token selector */
+    .tokens {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .token-btn {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: #9ca3af;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .token-btn:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+    }
+
+    .token-btn.active {
+      border-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+      color: #fff;
+    }
+
+    .token-icon { font-size: 16px; margin-right: 4px; }
+
+    /* QR Code */
+    .qr-section {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .qr-box {
+      display: inline-block;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .qr-box canvas { display: block; }
+
+    /* Address */
+    .address-section { margin-bottom: 24px; }
+
+    .address-box {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      gap: 12px;
+    }
+
+    .address-text {
+      flex: 1;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      word-break: break-all;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(135deg, #7c3aed, #6366f1);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+    }
+
+    .copy-btn:active { transform: translateY(0); }
+
+    .copy-btn.copied {
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    /* Action buttons */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .metamask-btn {
+      background: linear-gradient(135deg, #f6851b, #e2761b);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(246, 133, 27, 0.3);
+    }
+    .metamask-btn:hover { box-shadow: 0 6px 24px rgba(246, 133, 27, 0.4); }
+
+    .afdian-btn {
+      background: linear-gradient(135deg, #946CE6, #7c5fd3);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(148, 108, 230, 0.3);
+    }
+    .afdian-btn:hover { box-shadow: 0 6px 24px rgba(148, 108, 230, 0.4); }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .footer a { color: #818cf8; text-decoration: none; }
+    .footer a:hover { color: #a5b4fc; }
+
+    .heart {
+      display: inline-block;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .card { padding: 28px 20px; }
+      .networks { gap: 6px; }
+      .network-btn { padding: 6px 10px; font-size: 12px; }
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 100;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+<div class="toast" id="toast">✅ Address copied!</div>
+
+<div class="container">
+  <div class="card">
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar">🛠️</div>
+      <h1>Support LittlePeter52012</h1>
+      <p>Open-source MCP tools for AI agents<br>
+        <a href="https://github.com/LittlePeter52012" target="_blank">github.com/LittlePeter52012</a>
+      </p>
+    </div>
+
+    <!-- Network selector -->
+    <div class="network-section">
+      <div class="network-label">Network</div>
+      <div class="networks">
+        <button class="network-btn active" data-chain="1">Ethereum</button>
+        <button class="network-btn" data-chain="137">Polygon</button>
+        <button class="network-btn" data-chain="42161">Arbitrum</button>
+        <button class="network-btn" data-chain="10">Optimism</button>
+        <button class="network-btn" data-chain="8453">Base</button>
+      </div>
+    </div>
+
+    <!-- Token selector -->
+    <div class="tokens">
+      <button class="token-btn active" data-token="USDC">
+        <span class="token-icon">💲</span>USDC
+      </button>
+      <button class="token-btn" data-token="USDT">
+        <span class="token-icon">💵</span>USDT
+      </button>
+      <button class="token-btn" data-token="ETH">
+        <span class="token-icon">⟠</span>ETH
+      </button>
+    </div>
+
+    <!-- QR Code -->
+    <div class="qr-section">
+      <div class="qr-box">
+        <canvas id="qr-canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="address-section">
+      <div class="address-box">
+        <span class="address-text" id="wallet-address">0xD42c7c40785Fc00C707B859C541d42037611843b</span>
+        <button class="copy-btn" id="copy-btn" onclick="copyAddress()">Copy</button>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="actions">
+      <div style="display:flex; gap:10px;">
+        <a class="action-btn metamask-btn" style="flex:1;" href="#" onclick="openMetaMask()">
+          🦊 MetaMask
+        </a>
+        <a class="action-btn" style="flex:1; background:linear-gradient(135deg,#4A90D9,#357ABD); color:#fff; box-shadow:0 4px 16px rgba(74,144,217,0.3);" href="#" onclick="openSafePal()">
+          🛡️ SafePal
+        </a>
+      </div>
+      <a class="action-btn afdian-btn" href="https://afdian.com/a/LittlePeter52012" target="_blank">
+        ☕ 爱发电 (Alipay / WeChat Pay)
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p><span class="heart">💖</span> Every contribution powers open-source development</p>
+    <p style="margin-top: 8px;">
+      <a href="https://github.com/LittlePeter52012/wolai-mcp">wolai-mcp</a> · 
+      <a href="https://github.com/LittlePeter52012/todoist-mcp-helper">todoist-mcp-helper</a>
+    </p>
+  </div>
+</div>
+
+<!-- QR Code library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+
+<script>
+  const WALLET = '0xD42c7c40785Fc00C707B859C541d42037611843b';
+  let selectedChain = 1;
+  let selectedToken = 'USDC';
+
+  // Generate QR code
+  function generateQR() {
+    const canvas = document.getElementById('qr-canvas');
+    QRCode.toCanvas(canvas, WALLET, {
+      width: 200,
+      margin: 0,
+      color: { dark: '#1a1a2e', light: '#ffffff' }
+    });
+  }
+
+  // Copy address
+  function copyAddress() {
+    navigator.clipboard.writeText(WALLET).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied';
+      btn.classList.add('copied');
+      showToast();
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  // MetaMask deep link
+  function openMetaMask() {
+    const link = `https://metamask.app.link/send/${WALLET}@${selectedChain}`;
+    window.location.href = link;
+  }
+
+  // SafePal deep link
+  function openSafePal() {
+    const link = `https://link.safepal.io/send/${WALLET}?chain=${selectedChain}`;
+    window.location.href = link;
+  }
+
+  // Network buttons
+  document.querySelectorAll('.network-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.network-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedChain = parseInt(btn.dataset.chain);
+    });
+  });
+
+  // Token buttons
+  document.querySelectorAll('.token-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.token-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedToken = btn.dataset.token;
+    });
+  });
+
+  // Init
+  generateQR();
+</script>
+
+</body>
+</html>

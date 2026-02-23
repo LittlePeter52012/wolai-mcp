@@ -212,11 +212,11 @@ Your support keeps this project alive and growing ✨
 
 ### 💎 Crypto (USDC / ERC-20)
 
-```
-0xD42c7c40785Fc00C707B859C541d42037611843b
-```
+<a href="https://littlepeter52012.github.io/wolai-mcp/donate.html">
+  <img src="https://img.shields.io/badge/USDC%2FETH-Donate_Now-6c5ce7?style=for-the-badge&logo=ethereum&logoColor=white" alt="Donate Crypto">
+</a>
 
-<sub>Supports USDC, USDT, ETH on Ethereum & L2 networks</sub>
+<sub>Click to donate — supports MetaMask, SafePal & more</sub>
 
 </td>
 </tr>
