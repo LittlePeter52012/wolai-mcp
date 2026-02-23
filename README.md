@@ -32,16 +32,20 @@ Read, write, search, and navigate your Wolai pages — all from Claude, Gemini, 
 
 ### Install
 
+### Option A: Quick Run with `uvx` (Recommended)
+
+No installation needed — runs in a temporary isolated environment:
+
 ```bash
-pip install wolai-mcp
+uvx wolai-mcp
 ```
 
-Or install from source:
+> Don't have `uv`? Install it: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+### Option B: Install with `pip`
 
 ```bash
-git clone https://github.com/LittlePeter52012/wolai-mcp.git
-cd wolai-mcp
-pip install -e .
+pip install wolai-mcp
 ```
 
 ### Get Credentials
@@ -55,8 +59,6 @@ pip install -e .
 ## 📋 Configuration
 
 All credentials are passed via **environment variables** — no need to edit any code.
-
-### Environment Variables
 
 | Variable           | Description                          | Required                         |
 | ------------------ | ------------------------------------ | -------------------------------- |
@@ -72,6 +74,26 @@ All credentials are passed via **environment variables** — no need to edit any
 
 Add to `claude_desktop_config.json`:
 
+<table><tr><th>uvx (recommended)</th><th>pip</th></tr><tr><td>
+
+```json
+{
+  "mcpServers": {
+    "wolai-kb": {
+      "command": "uvx",
+      "args": ["wolai-mcp"],
+      "env": {
+        "WOLAI_APP_ID": "your_app_id",
+        "WOLAI_APP_SECRET": "your_secret",
+        "WOLAI_ROOT_ID": "your_root_id"
+      }
+    }
+  }
+}
+```
+
+</td><td>
+
 ```json
 {
   "mcpServers": {
@@ -79,27 +101,15 @@ Add to `claude_desktop_config.json`:
       "command": "wolai-mcp",
       "env": {
         "WOLAI_APP_ID": "your_app_id",
-        "WOLAI_APP_SECRET": "your_app_secret",
-        "WOLAI_ROOT_ID": "your_root_page_id"
+        "WOLAI_APP_SECRET": "your_secret",
+        "WOLAI_ROOT_ID": "your_root_id"
       }
     }
   }
 }
 ```
 
-### Claude Code
-
-```bash
-claude mcp add-json wolai-kb '{
-  "type": "stdio",
-  "command": "wolai-mcp",
-  "env": {
-    "WOLAI_APP_ID": "your_app_id",
-    "WOLAI_APP_SECRET": "your_app_secret",
-    "WOLAI_ROOT_ID": "your_root_page_id"
-  }
-}' --scope user
-```
+</td></tr></table>
 
 ### Gemini CLI
 
@@ -112,17 +122,33 @@ Add to `~/.gemini/settings.json`:
       "command": "wolai-mcp",
       "env": {
         "WOLAI_APP_ID": "your_app_id",
-        "WOLAI_APP_SECRET": "your_app_secret",
-        "WOLAI_ROOT_ID": "your_root_page_id"
+        "WOLAI_APP_SECRET": "your_secret",
+        "WOLAI_ROOT_ID": "your_root_id"
       }
     }
   }
 }
 ```
 
-### Cursor
+### Cursor / CherryStudio / Other MCP Clients
 
-Add to Cursor Settings → MCP:
+<table><tr><th>uvx</th><th>pip</th></tr><tr><td>
+
+```json
+{
+  "wolai-kb": {
+    "command": "uvx",
+    "args": ["wolai-mcp"],
+    "env": {
+      "WOLAI_APP_ID": "your_app_id",
+      "WOLAI_APP_SECRET": "your_secret",
+      "WOLAI_ROOT_ID": "your_root_id"
+    }
+  }
+}
+```
+
+</td><td>
 
 ```json
 {
@@ -130,12 +156,14 @@ Add to Cursor Settings → MCP:
     "command": "wolai-mcp",
     "env": {
       "WOLAI_APP_ID": "your_app_id",
-      "WOLAI_APP_SECRET": "your_app_secret",
-      "WOLAI_ROOT_ID": "your_root_page_id"
+      "WOLAI_APP_SECRET": "your_secret",
+      "WOLAI_ROOT_ID": "your_root_id"
     }
   }
 }
 ```
+
+</td></tr></table>
 
 ---
 

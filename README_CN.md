@@ -30,18 +30,20 @@
 
 ## 🚀 快速开始
 
-### 安装
+### 方式一：`uvx` 直接运行（推荐）
+
+无需安装，在临时隔离环境中直接运行：
+
+```bash
+uvx wolai-mcp
+```
+
+> 没有 `uv`？一键安装：`curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+### 方式二：`pip` 安装
 
 ```bash
 pip install wolai-mcp
-```
-
-或从源码安装：
-
-```bash
-git clone https://github.com/LittlePeter52012/wolai-mcp.git
-cd wolai-mcp
-pip install -e .
 ```
 
 ### 获取凭证
@@ -55,8 +57,6 @@ pip install -e .
 ## 📋 配置
 
 所有凭证通过**环境变量**传入 — 无需修改任何代码。
-
-### 环境变量
 
 | 变量               | 说明            | 必填                  |
 | ------------------ | --------------- | --------------------- |
@@ -72,6 +72,26 @@ pip install -e .
 
 添加到 `claude_desktop_config.json`：
 
+<table><tr><th>uvx 方式（推荐）</th><th>pip 方式</th></tr><tr><td>
+
+```json
+{
+  "mcpServers": {
+    "wolai-kb": {
+      "command": "uvx",
+      "args": ["wolai-mcp"],
+      "env": {
+        "WOLAI_APP_ID": "你的应用ID",
+        "WOLAI_APP_SECRET": "你的密钥",
+        "WOLAI_ROOT_ID": "你的根页面ID"
+      }
+    }
+  }
+}
+```
+
+</td><td>
+
 ```json
 {
   "mcpServers": {
@@ -79,13 +99,15 @@ pip install -e .
       "command": "wolai-mcp",
       "env": {
         "WOLAI_APP_ID": "你的应用ID",
-        "WOLAI_APP_SECRET": "你的应用密钥",
+        "WOLAI_APP_SECRET": "你的密钥",
         "WOLAI_ROOT_ID": "你的根页面ID"
       }
     }
   }
 }
 ```
+
+</td></tr></table>
 
 ### Gemini CLI
 
@@ -98,7 +120,7 @@ pip install -e .
       "command": "wolai-mcp",
       "env": {
         "WOLAI_APP_ID": "你的应用ID",
-        "WOLAI_APP_SECRET": "你的应用密钥",
+        "WOLAI_APP_SECRET": "你的密钥",
         "WOLAI_ROOT_ID": "你的根页面ID"
       }
     }
@@ -106,9 +128,25 @@ pip install -e .
 }
 ```
 
-### Cursor
+### Cursor / CherryStudio / 其他 MCP 客户端
 
-在 Cursor 设置 → MCP 中添加：
+<table><tr><th>uvx 方式</th><th>pip 方式</th></tr><tr><td>
+
+```json
+{
+  "wolai-kb": {
+    "command": "uvx",
+    "args": ["wolai-mcp"],
+    "env": {
+      "WOLAI_APP_ID": "你的应用ID",
+      "WOLAI_APP_SECRET": "你的密钥",
+      "WOLAI_ROOT_ID": "你的根页面ID"
+    }
+  }
+}
+```
+
+</td><td>
 
 ```json
 {
@@ -116,12 +154,14 @@ pip install -e .
     "command": "wolai-mcp",
     "env": {
       "WOLAI_APP_ID": "你的应用ID",
-      "WOLAI_APP_SECRET": "你的应用密钥",
+      "WOLAI_APP_SECRET": "你的密钥",
       "WOLAI_ROOT_ID": "你的根页面ID"
     }
   }
 }
 ```
+
+</td></tr></table>
 
 ---
 
