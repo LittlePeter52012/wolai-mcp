@@ -13,13 +13,14 @@ except ImportError:
 # Initialize FastMCP Server
 mcp = FastMCP("wolai-knowledge-base")
 
-# Configuration
-APP_ID = "REDACTED_APP_ID"
-APP_SECRET = "REDACTED_OLD_APP_SECRET"
+# Configuration — all credentials via environment variables
+import os
+APP_ID = os.environ.get("WOLAI_APP_ID", "")
+APP_SECRET = os.environ.get("WOLAI_APP_SECRET", "")
 BASE_URL = "https://openapi.wolai.com/v1"
 
 # The user's root page ID (changes annually)
-DEFAULT_ROOT_ID = "REDACTED_ROOT_ID"
+DEFAULT_ROOT_ID = os.environ.get("WOLAI_ROOT_ID", "")
 
 # Global token storage
 _token = None

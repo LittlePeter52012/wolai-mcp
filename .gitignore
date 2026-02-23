@@ -26,3 +26,8 @@ Thumbs.db
 
 # Distribution
 *.tar.gz
+
+# Secrets — NEVER commit .env files
+.env
+.env.*
+*.env

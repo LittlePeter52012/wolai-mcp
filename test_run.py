@@ -2,11 +2,17 @@ import requests
 import json
 import sys
 
-# Constants from server.py logic
-APP_ID = "REDACTED_APP_ID"
-APP_SECRET = "REDACTED_OLD_APP_SECRET"
+# Credentials via environment variables (never hardcode secrets!)
+import os
+APP_ID = os.environ.get("WOLAI_APP_ID", "")
+APP_SECRET = os.environ.get("WOLAI_APP_SECRET", "")
 BASE_URL = "https://openapi.wolai.com/v1"
-ROOT_ID = "REDACTED_ROOT_ID"
+ROOT_ID = os.environ.get("WOLAI_ROOT_ID", "")
+
+if not APP_ID or not APP_SECRET:
+    print("Error: WOLAI_APP_ID and WOLAI_APP_SECRET must be set as environment variables.")
+    print("Example: export WOLAI_APP_ID=your_id && export WOLAI_APP_SECRET=your_secret")
+    sys.exit(1)
 
 def get_token():
     url = f"{BASE_URL}/token"
