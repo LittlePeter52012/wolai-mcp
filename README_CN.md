@@ -8,6 +8,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/wolai-mcp)](https://pypi.org/project/wolai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Sponsor](https://img.shields.io/badge/💖_赞助-ff69b4?style=flat)](https://buymeacoffee.com/littlepeter52012)
 
 **通过 MCP 协议将 AI 智能体连接到你的 [Wolai](https://www.wolai.com) 知识库。**
 
@@ -184,6 +185,42 @@ pip install wolai-mcp
 - **`set_wolai_credentials`** — 切换 Wolai 账号
 - **`set_root_page`** — 更换知识库根页面
 - **`get_wolai_config`** — 查看当前配置
+
+---
+
+## 💖 支持本项目
+
+如果 **Wolai MCP** 对你有帮助，欢迎请作者喝杯咖啡！
+你的支持是项目持续维护和迭代的最大动力 ✨
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+### ☕ Buy Me a Coffee
+
+<a href="https://buymeacoffee.com/littlepeter52012">
+  <img src="https://img.shields.io/badge/请我喝杯咖啡-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+</a>
+
+简单快捷，一键支持
+
+</td>
+<td align="center" width="50%">
+
+### 💎 加密货币 (USDC / ERC-20)
+
+```
+0xD42c7c40785Fc00C707B859C541d42037611843b
+```
+
+<sub>支持 USDC、USDT、ETH — Ethereum 及 L2 网络均可</sub>
+
+</td>
+</tr>
+</table>
+
+> 每一份支持都是莫大的鼓励 — **感谢！** 🙏
 
 ---
 

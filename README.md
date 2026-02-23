@@ -8,6 +8,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/wolai-mcp)](https://pypi.org/project/wolai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Sponsor](https://img.shields.io/badge/💖_Sponsor-ff69b4?style=flat)](https://buymeacoffee.com/littlepeter52012)
 
 **Connect AI agents to your [Wolai](https://www.wolai.com) knowledge base** via the Model Context Protocol (MCP).
 
@@ -186,6 +187,42 @@ You can also change credentials at runtime without restarting:
 - **`set_wolai_credentials`** — Switch Wolai account
 - **`set_root_page`** — Change the root knowledge base page
 - **`get_wolai_config`** — Check current configuration
+
+---
+
+## 💖 Support This Project
+
+If you find **Wolai MCP** useful, consider supporting the development!
+Your contribution keeps this project maintained and continuously improving ✨
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+### ☕ Buy Me a Coffee
+
+<a href="https://buymeacoffee.com/littlepeter52012">
+  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+</a>
+
+Quick and easy one-time support
+
+</td>
+<td align="center" width="50%">
+
+### 💎 Crypto (USDC / ERC-20)
+
+```
+0xD42c7c40785Fc00C707B859C541d42037611843b
+```
+
+<sub>Supports USDC, USDT, ETH on Ethereum & L2 networks</sub>
+
+</td>
+</tr>
+</table>
+
+> Every little bit helps — **thank you!** 🙏
 
 ---
 
