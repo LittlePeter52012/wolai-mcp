@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="wolai-mcp.jpeg" width="120" alt="Wolai MCP Icon">
+</p>
+
 # Wolai MCP Server 🐺
 
 **English** | [中文](README_CN.md)
