@@ -8,7 +8,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/wolai-mcp)](https://pypi.org/project/wolai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Sponsor](https://img.shields.io/badge/💖_Sponsor-ff69b4?style=flat)](https://buymeacoffee.com/littlepeter52012)
+[![Sponsor](https://img.shields.io/badge/💖_Sponsor-946CE6?style=flat)](https://afdian.com/a/LittlePeter52012)
 
 **Connect AI agents to your [Wolai](https://www.wolai.com) knowledge base** via the Model Context Protocol (MCP).
 
@@ -192,20 +192,20 @@ You can also change credentials at runtime without restarting:
 
 ## 💖 Support This Project
 
-If you find **Wolai MCP** useful, consider supporting the development!
-Your contribution keeps this project maintained and continuously improving ✨
+If you find **Wolai MCP** useful, consider buying me a coffee!
+Your support keeps this project alive and growing ✨
 
 <table>
 <tr>
 <td align="center" width="50%">
 
-### ☕ Buy Me a Coffee
+### ☕ 爱发电 (Afdian)
 
-<a href="https://buymeacoffee.com/littlepeter52012">
-  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+<a href="https://afdian.com/a/LittlePeter52012">
+  <img src="https://img.shields.io/badge/爱发电-946CE6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyMS4zNWwtMS40NS0xLjMyQzUuNCAxNS4zNiAyIDEyLjI4IDIgOC41IDIgNS40MiA0LjQyIDMgNy41IDNjMS43NCAwIDMuNDEuODEgNC41IDIuMDlDMTMuMDkgMy44MSAxNC43NiAzIDE2LjUgMyAxOS41OCAzIDIyIDUuNDIgMjIgOC41YzAgMy43OC0zLjQgNi44Ni04LjU1IDExLjU0TDEyIDIxLjM1eiIvPjwvc3ZnPg==&logoColor=white" alt="Support on Afdian">
 </a>
 
-Quick and easy one-time support
+<sub>Supports Alipay & WeChat Pay</sub>
 
 </td>
 <td align="center" width="50%">

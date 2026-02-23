@@ -8,7 +8,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/wolai-mcp)](https://pypi.org/project/wolai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Sponsor](https://img.shields.io/badge/💖_赞助-ff69b4?style=flat)](https://buymeacoffee.com/littlepeter52012)
+[![Sponsor](https://img.shields.io/badge/💖_赞助-946CE6?style=flat)](https://afdian.com/a/LittlePeter52012)
 
 **通过 MCP 协议将 AI 智能体连接到你的 [Wolai](https://www.wolai.com) 知识库。**
 
@@ -197,13 +197,13 @@ pip install wolai-mcp
 <tr>
 <td align="center" width="50%">
 
-### ☕ Buy Me a Coffee
+### ☕ 爱发电
 
-<a href="https://buymeacoffee.com/littlepeter52012">
-  <img src="https://img.shields.io/badge/请我喝杯咖啡-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+<a href="https://afdian.com/a/LittlePeter52012">
+  <img src="https://img.shields.io/badge/爱发电-946CE6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyMS4zNWwtMS40NS0xLjMyQzUuNCAxNS4zNiAyIDEyLjI4IDIgOC41IDIgNS40MiA0LjQyIDMgNy41IDNjMS43NCAwIDMuNDEuODEgNC41IDIuMDlDMTMuMDkgMy44MSAxNC43NiAzIDE2LjUgMyAxOS41OCAzIDIyIDUuNDIgMjIgOC41YzAgMy43OC0zLjQgNi44Ni04LjU1IDExLjU0TDEyIDIxLjM1eiIvPjwvc3ZnPg==&logoColor=white" alt="在爱发电上支持我">
 </a>
 
-简单快捷，一键支持
+<sub>支持支付宝 / 微信支付</sub>
 
 </td>
 <td align="center" width="50%">
