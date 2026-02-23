@@ -365,7 +365,7 @@
     <!-- QR Code -->
     <div class="qr-section">
       <div class="qr-box">
-        <canvas id="qr-canvas"></canvas>
+        <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xD42c7c40785Fc00C707B859C541d42037611843b&color=1a1a2e&bgcolor=ffffff" width="200" height="200" alt="Wallet QR Code" style="display:block;">
       </div>
     </div>
 
@@ -403,23 +403,9 @@
   </div>
 </div>
 
-<!-- QR Code library -->
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
-
 <script>
   const WALLET = '0xD42c7c40785Fc00C707B859C541d42037611843b';
   let selectedChain = 1;
-  let selectedToken = 'USDC';
-
-  // Generate QR code
-  function generateQR() {
-    const canvas = document.getElementById('qr-canvas');
-    QRCode.toCanvas(canvas, WALLET, {
-      width: 200,
-      margin: 0,
-      color: { dark: '#1a1a2e', light: '#ffffff' }
-    });
-  }
 
   // Copy address
   function copyAddress() {
@@ -427,30 +413,21 @@
       const btn = document.getElementById('copy-btn');
       btn.textContent = '✓ Copied';
       btn.classList.add('copied');
-      showToast();
-      setTimeout(() => {
-        btn.textContent = 'Copy';
-        btn.classList.remove('copied');
-      }, 2000);
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
     });
-  }
-
-  function showToast() {
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2500);
   }
 
   // MetaMask deep link
   function openMetaMask() {
-    const link = `https://metamask.app.link/send/${WALLET}@${selectedChain}`;
-    window.location.href = link;
+    window.location.href = `https://metamask.app.link/send/${WALLET}@${selectedChain}`;
   }
 
   // SafePal deep link
   function openSafePal() {
-    const link = `https://link.safepal.io/send/${WALLET}?chain=${selectedChain}`;
-    window.location.href = link;
+    window.location.href = `https://link.safepal.io/send/${WALLET}?chain=${selectedChain}`;
   }
 
   // Network buttons
@@ -467,12 +444,8 @@
     btn.addEventListener('click', () => {
       document.querySelectorAll('.token-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      selectedToken = btn.dataset.token;
     });
   });
-
-  // Init
-  generateQR();
 </script>
 
 </body>
