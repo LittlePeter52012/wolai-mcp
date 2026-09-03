@@ -18,7 +18,13 @@ def get_token():
     url = f"{BASE_URL}/token"
     payload = {"appId": APP_ID, "appSecret": APP_SECRET}
     response = requests.post(url, json=payload)
-    return response.json()["data"]["app_token"]
+    response.raise_for_status()
+    res_json = response.json()
+    data = res_json.get("data")
+    if not data or "app_token" not in data:
+        err_msg = res_json.get("message") or res_json
+        raise ValueError(f"Failed to get token: {err_msg}")
+    return data["app_token"]
 
 def test_workflow():
     print("--- 1. Testing Authentication ---")
